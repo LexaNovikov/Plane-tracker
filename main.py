@@ -56,6 +56,8 @@ def get_aeroplanes_by_altitude(aeroplanes, altitude):
 
 
 def get_top_aeroplanes(sorted_aeroplanes, top_n):
+    if top_n == 0:
+        raise ValueError("Количество не может быть меньше единицы")
     return sorted_aeroplanes[:top_n]
 
 
@@ -83,5 +85,5 @@ def user_interaction():
     top_aeroplanes = get_top_aeroplanes(sorted_aeroplanes, top_n)
     print_aeroplanes(top_aeroplanes)
 
-
-user_interaction()
+if __file__ == "__main__":
+    user_interaction()
